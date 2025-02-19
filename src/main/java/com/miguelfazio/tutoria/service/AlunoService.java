@@ -1,7 +1,7 @@
 package com.miguelfazio.tutoria.service;
 
-import com.miguelfazio.tutoria.controller.CreateAlunoDTO;
-import com.miguelfazio.tutoria.controller.UpdateAlunoDTO;
+import com.miguelfazio.tutoria.DTO.CreateAlunoDTO;
+import com.miguelfazio.tutoria.DTO.UpdateAlunoDTO;
 import com.miguelfazio.tutoria.database.entity.Aluno;
 import com.miguelfazio.tutoria.database.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
