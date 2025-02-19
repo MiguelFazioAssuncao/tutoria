@@ -1,5 +1,7 @@
 package com.miguelfazio.tutoria.controller;
 
+import com.miguelfazio.tutoria.DTO.CreateAlunoDTO;
+import com.miguelfazio.tutoria.DTO.UpdateAlunoDTO;
 import com.miguelfazio.tutoria.database.entity.Aluno;
 import com.miguelfazio.tutoria.service.AlunoService;
 import org.springframework.http.ResponseEntity;
