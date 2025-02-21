@@ -4,6 +4,7 @@ import com.miguelfazio.tutoria.DTO.CreateTutorDTO;
 import com.miguelfazio.tutoria.DTO.UpdateTutorDTO;
 import com.miguelfazio.tutoria.database.entity.Tutor;
 import com.miguelfazio.tutoria.service.TutorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ public class TutorController {
 
     private final TutorService tutorService;
 
+    @Autowired
     public TutorController(TutorService tutorService) {
         this.tutorService = tutorService;
     }

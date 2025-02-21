@@ -14,7 +14,7 @@ import java.util.UUID;
 @Service
 public class AlunoService {
 
-    private AlunoRepository alunoRepository;
+    private final AlunoRepository alunoRepository;
 
     @Autowired
     public AlunoService(AlunoRepository alunoRepository) {

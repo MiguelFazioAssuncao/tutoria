@@ -4,6 +4,7 @@ import com.miguelfazio.tutoria.DTO.CreateAlunoDTO;
 import com.miguelfazio.tutoria.DTO.UpdateAlunoDTO;
 import com.miguelfazio.tutoria.database.entity.Aluno;
 import com.miguelfazio.tutoria.service.AlunoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ public class AlunoController {
 
     private final AlunoService alunoService;
 
+    @Autowired
     public AlunoController(AlunoService alunoService) {
         this.alunoService = alunoService;
     }
