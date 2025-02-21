@@ -9,6 +9,7 @@ import com.miguelfazio.tutoria.database.repository.TutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -67,6 +68,27 @@ public class AgendaService {
     public List<Agenda> listAgendas() {
         return agendaRepository.findAll();
     }
+
+    public List<Agenda> getAgendamentosByAlunoId(String alunoId) {
+        var id = UUID.fromString(alunoId);
+        return agendaRepository.findByAlunoIdOrderByDataAsc(id);
+    }
+
+    public List<Agenda> getAgendamentosByTutorId(String tutorId) {
+        var id = UUID.fromString(tutorId);
+        return agendaRepository.findByTutorIdOrderByDataAsc(id);
+    }
+
+    public List<Agenda> getProximosAgendamentosByAlunoId(String alunoId) {
+        var id = UUID.fromString(alunoId);
+        return agendaRepository.findByAlunoIdAndDataAfterOrderByDataAsc(id, LocalDateTime.now());
+    }
+
+    public List<Agenda> getProximosAgendamentosByTutorId(String tutorId) {
+        var id = UUID.fromString(tutorId);
+        return agendaRepository.findByTutorIdAndDataAfterOrderByDataAsc(id, LocalDateTime.now());
+    }
+
 
     public void updateAgendaByid(String agendaId, UpdateAgendaDTO updateAgendaDTO) {
         var id = UUID.fromString(agendaId);
